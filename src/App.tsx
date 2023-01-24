@@ -12,7 +12,6 @@ const FrontOfficeDashboard = lazy(
 const FrontOfficeKamarPage = lazy(() => import("src/pages/FrontOffice/Kamar"));
 
 const App = () => {
-  console.log("test");
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
       <BrowserRouter>

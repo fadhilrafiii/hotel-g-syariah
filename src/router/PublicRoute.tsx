@@ -12,8 +12,6 @@ const PublicRoute = ({ Component, userRole }: RouteProps) => {
   const isAuthenticated = cookies.get("token");
   const roleBasePath = "/" + userRole.toLowerCase();
 
-  console.log("isAuthenticated", isAuthenticated);
-
   if (isAuthenticated) return <Navigate to={roleBasePath} />;
 
   return Component;
