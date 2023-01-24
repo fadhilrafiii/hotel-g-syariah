@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-shadow {
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.06);
+  }
+}
