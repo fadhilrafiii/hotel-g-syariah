@@ -20,48 +20,50 @@ const App = () => {
 
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      <SnackbarProvider value={snackbarCtx}>
-        <ApolloProvider client={client}>
-          <Snackbar />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Navigate to="/login" />} />
-              <Route
-                path="/login"
-                element={
-                  <RBACRouter
-                    type={RouteEnum.Public}
-                    userRole={Roles.Admin}
-                    Component={<LoginPage />}
+      <div className="min-w-[960px]">
+        <SnackbarProvider value={snackbarCtx}>
+          <ApolloProvider client={client}>
+            <Snackbar />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Navigate to="/login" />} />
+                <Route
+                  path="/login"
+                  element={
+                    <RBACRouter
+                      type={RouteEnum.Public}
+                      userRole={Roles.Admin}
+                      Component={<LoginPage />}
+                    />
+                  }
+                />
+                <Route path="/fo">
+                  <Route
+                    index
+                    element={
+                      <RBACRouter
+                        type={RouteEnum.Private}
+                        userRole={Roles.Admin}
+                        Component={<FrontOfficeDashboard />}
+                      />
+                    }
                   />
-                }
-              />
-              <Route path="/fo">
-                <Route
-                  index
-                  element={
-                    <RBACRouter
-                      type={RouteEnum.Private}
-                      userRole={Roles.Admin}
-                      Component={<FrontOfficeDashboard />}
-                    />
-                  }
-                />
-                <Route
-                  path="kamar"
-                  element={
-                    <RBACRouter
-                      type={RouteEnum.Private}
-                      userRole={Roles.Admin}
-                      Component={<FrontOfficeKamarPage />}
-                    />
-                  }
-                />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </ApolloProvider>
-      </SnackbarProvider>
+                  <Route
+                    path="kamar"
+                    element={
+                      <RBACRouter
+                        type={RouteEnum.Private}
+                        userRole={Roles.Admin}
+                        Component={<FrontOfficeKamarPage />}
+                      />
+                    }
+                  />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </ApolloProvider>
+        </SnackbarProvider>
+      </div>
     </Suspense>
   );
 };
