@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import Cookies from "js-cookie";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import LoginLandingImg from "src/assets/images/hotel-g-syariah-beranda.jpg";
@@ -26,10 +27,26 @@ const LoginPage = () => {
   );
   const { open: showSnackbar } = useSnackbar();
 
+  const onLoginSuccess = (token: string) => {
+    Cookies.set("auth", token, {
+      path: "/",
+      expires: 30 * 24 * 3600,
+    });
+
+    showSnackbar({
+      message: "Login successful!",
+      type: SnackbarTypes.SUCCESS,
+    });
+  };
+
   useEffect(() => {
     if (error)
       showSnackbar({ message: error?.message, type: SnackbarTypes.ERROR });
   }, [error]);
+
+  useEffect(() => {
+    if (data && !error) onLoginSuccess(data?.login?.accessToken as string);
+  }, [data, error]);
 
   const handleChangeCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

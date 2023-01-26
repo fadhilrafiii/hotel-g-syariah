@@ -1,5 +1,6 @@
-import cookies from "js-cookie";
+import Cookies from "js-cookie";
 import { Navigate } from "react-router-dom";
+import { DEFAULT_ROUTE_BY_ROLE } from "src/shared/constants/roles";
 import { Role } from "src/shared/types/roles";
 
 interface RouteProps {
@@ -9,10 +10,10 @@ interface RouteProps {
 
 const PublicRoute = ({ Component, userRole }: RouteProps) => {
   // Check if login then redirect to its dashboard;
-  const isAuthenticated = cookies.get("token");
-  const roleBasePath = "/" + userRole.toLowerCase();
+  const isAuthenticated = Cookies.get("auth");
+  const defaultRolePath = DEFAULT_ROUTE_BY_ROLE[userRole];
 
-  if (isAuthenticated) return <Navigate to={roleBasePath} />;
+  if (isAuthenticated) return <Navigate to={defaultRolePath} />;
 
   return Component;
 };
