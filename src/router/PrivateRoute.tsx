@@ -15,8 +15,6 @@ const PrivateRoute = ({ Component, userRole }: RouteProps) => {
   const isAuthenticated = cookies.get("token");
   if (!isAuthenticated) return <Navigate to="/login" />;
 
-  console.log("pathname", pathname);
-
   // Check whether the user is authorized
   const isAuthorized = RBAC[pathname].includes(userRole);
 

@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import LoginLandingImg from "src/assets/images/hotel-g-syariah-beranda.jpg";
+import { GQL_MUTATION_LOGIN_USER } from "src/clients/mutations/auth";
+import Loading from "src/components/icons/Loading";
+import SnackbarContext, { useSnackbar } from "src/context/snackbar";
+import Colors from "src/shared/types/colors";
+import { SnackbarTypes } from "src/shared/types/snackbar";
 
 interface ILoginForm {
   username: string;
@@ -12,6 +18,18 @@ const LoginPage = () => {
     username: "",
     password: "",
   });
+  const [login, { data, loading, error }] = useMutation(
+    GQL_MUTATION_LOGIN_USER,
+    {
+      variables: credentials,
+    }
+  );
+  const { open: showSnackbar } = useSnackbar();
+
+  useEffect(() => {
+    if (error)
+      showSnackbar({ message: error?.message, type: SnackbarTypes.ERROR });
+  }, [error]);
 
   const handleChangeCredentials = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -24,7 +42,7 @@ const LoginPage = () => {
 
   const handleSubmitLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(credentials);
+    login();
   };
 
   return (
@@ -53,16 +71,24 @@ const LoginPage = () => {
               type="password"
               className="mb-4 w-full outline-none border-none p-3 rounded-lg bg-blue-50 input-shadow"
             />
+            <Link
+              to="/lupa-password"
+              className="inline-block text-xs text-gray-400 mb-6"
+            >
+              Lupa Password
+            </Link>
+            <button className="uppercase text-white px-6 py-3 bg-green-700 rounded-[10px] w-full">
+              {loading ? (
+                <Loading
+                  size={21}
+                  color={Colors.Primary100}
+                  colorSecondary={Colors.White}
+                />
+              ) : (
+                "login"
+              )}
+            </button>
           </form>
-          <Link
-            to="/lupa-password"
-            className="inline-block text-xs text-gray-400 mb-6"
-          >
-            Lupa Password
-          </Link>
-          <button className="uppercase text-white px-6 py-3 bg-green-700 rounded-[10px] w-full">
-            login
-          </button>
         </div>
       </div>
       <div
