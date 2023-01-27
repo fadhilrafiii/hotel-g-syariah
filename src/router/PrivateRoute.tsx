@@ -1,7 +1,10 @@
 import { useQuery } from "@apollo/client";
 import Cookies from "js-cookie";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
+import Navbar from "src/components/Navbar";
+import Sidebar from "src/components/Sidebar";
 import { DEFAULT_ROUTE_BY_ROLE, RBAC } from "src/shared/constants/roles";
+import { ModuleEnum } from "src/shared/types/module";
 import { Role } from "src/shared/types/roles";
 
 interface RouteProps {
@@ -19,12 +22,20 @@ const PrivateRoute = ({ Component, userRole }: RouteProps) => {
   // Check whether the user is authorized
   const defaultRoleRoute = DEFAULT_ROUTE_BY_ROLE[userRole];
   const basePath = pathname.split("/")[1];
-  const isAuthorized = RBAC[basePath].includes(userRole);
+  const isAuthorized = RBAC[basePath as ModuleEnum].includes(userRole);
   if (!basePath || !isAuthorized) return <Navigate to={defaultRoleRoute} />;
 
   return (
     <>
-      {Component}
+      <div className="h-screen">
+        <Navbar />
+        <aside className="fixed top-[75px] left-0 bottom-8">
+          <Sidebar />
+        </aside>
+        <main className="py-7 px-6 flex-grow margin ml-[246px]">
+          {Component}
+        </main>
+      </div>
       <Outlet />
     </>
   );

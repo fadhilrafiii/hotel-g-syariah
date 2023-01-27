@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      <div className="min-w-[960px]">
+      <div className="min-w-[1200px]">
         <SnackbarProvider value={snackbarCtx}>
           <ApolloProvider client={client}>
             <Snackbar />

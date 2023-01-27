@@ -6,7 +6,7 @@ import LoginLandingImg from "src/assets/images/hotel-g-syariah-beranda.jpg";
 import { GQL_MUTATION_LOGIN_USER } from "src/clients/mutations/auth";
 import Loading from "src/components/icons/Loading";
 import SnackbarContext, { useSnackbar } from "src/context/snackbar";
-import Colors from "src/shared/types/colors";
+import Colors from "src/shared/types/color";
 import { SnackbarTypes } from "src/shared/types/snackbar";
 
 interface ILoginForm {
@@ -30,7 +30,7 @@ const LoginPage = () => {
   const onLoginSuccess = (token: string) => {
     Cookies.set("auth", token, {
       path: "/",
-      expires: 30 * 24 * 3600,
+      expires: 30,
     });
 
     showSnackbar({
