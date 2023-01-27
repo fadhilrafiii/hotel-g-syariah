@@ -29,12 +29,14 @@ const PrivateRoute = ({ Component, userRole }: RouteProps) => {
     <>
       <div className="h-screen">
         <Navbar />
-        <aside className="fixed top-[75px] left-0 bottom-8">
-          <Sidebar />
-        </aside>
-        <main className="py-7 px-6 flex-grow margin ml-[246px]">
-          {Component}
-        </main>
+        <div className="flex min-h-[calc(100vh-75px)]">
+          <aside className="fixed top-[75px] left-0 bottom-7">
+            <Sidebar />
+          </aside>
+          <main className="py-7 px-6 flex-grow margin ml-[246px]">
+            {Component}
+          </main>
+        </div>
       </div>
       <Outlet />
     </>
