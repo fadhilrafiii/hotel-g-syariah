@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <header className="flex justify-between items-center gap-x-2 p-6 sticky top-0 left-0 right-0 h-[75px] bg-white">
-      <h3 className="text-2xl font-semibold text-green-700">G Syariah Hotel</h3>
+      <h3 className="text-2xl font-semibold text-green-600">G Syariah Hotel</h3>
       <div className="flex justify-center items-center gap-x-9">
         {MODULES.map((mod: Module) => {
           const isLocked = !RBAC[mod.path].includes(role);

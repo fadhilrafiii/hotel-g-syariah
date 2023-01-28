@@ -14,6 +14,7 @@ const FrontOfficeDashboard = lazy(
   () => import("src/pages/FrontOffice/Dashboard")
 );
 const FrontOfficeKamarPage = lazy(() => import("src/pages/FrontOffice/Kamar"));
+const NotFoundPage = lazy(() => import("src/pages/NotFound"));
 
 const App = () => {
   const snackbarCtx = useSnackbarContext();
@@ -26,6 +27,7 @@ const App = () => {
             <Snackbar />
             <BrowserRouter>
               <Routes>
+                <Route path="*" element={<NotFoundPage />} />
                 <Route path="/" element={<Navigate to="/login" />} />
                 <Route
                   path="/login"
