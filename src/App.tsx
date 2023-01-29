@@ -2,6 +2,7 @@ import { ApolloProvider } from "@apollo/client";
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import client from "./clients";
+import LoadingComponent from "./components/Loading";
 import Snackbar from "./components/Snackbar";
 import { SnackbarProvider, useSnackbarContext } from "./context/snackbar";
 import RBACRouter, { RouteEnum } from "./router";
@@ -20,7 +21,7 @@ const App = () => {
   const snackbarCtx = useSnackbarContext();
 
   return (
-    <Suspense fallback={<h1>Loading...</h1>}>
+    <Suspense fallback={<LoadingComponent />}>
       <div className="min-w-[1200px]">
         <SnackbarProvider value={snackbarCtx}>
           <ApolloProvider client={client}>

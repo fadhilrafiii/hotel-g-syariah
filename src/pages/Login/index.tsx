@@ -94,7 +94,7 @@ const LoginPage = () => {
             >
               Lupa Password
             </Link>
-            <button className="uppercase text-white px-6 py-3 bg-green-700 rounded-[10px] w-full">
+            <button className="uppercase text-white px-6 py-3 bg-green-700 rounded-[10px] w-full flex justify-center">
               {loading ? (
                 <Loading
                   size={21}
