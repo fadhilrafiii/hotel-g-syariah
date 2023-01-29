@@ -8,6 +8,7 @@ import Loading from "src/components/icons/Loading";
 import SnackbarContext, { useSnackbar } from "src/context/snackbar";
 import Colors from "src/shared/types/color";
 import { SnackbarTypes } from "src/shared/types/snackbar";
+import { setAuthToken } from "src/shared/utils/auth";
 
 interface ILoginForm {
   username: string;
@@ -28,10 +29,7 @@ const LoginPage = () => {
   const { open: showSnackbar } = useSnackbar();
 
   const onLoginSuccess = (token: string) => {
-    Cookies.set("auth", token, {
-      path: "/",
-      expires: 30,
-    });
+    setAuthToken(token);
 
     showSnackbar({
       message: "Login successful!",

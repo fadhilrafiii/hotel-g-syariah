@@ -6,6 +6,7 @@ import Sidebar from "src/components/Sidebar";
 import { DEFAULT_ROUTE_BY_ROLE, RBAC } from "src/shared/constants/roles";
 import { ModuleEnum } from "src/shared/types/module";
 import { Role } from "src/shared/types/roles";
+import { getAuthToken } from "src/shared/utils/auth";
 
 interface RouteProps {
   Component: JSX.Element;
@@ -16,7 +17,7 @@ const PrivateRoute = ({ Component, userRole }: RouteProps) => {
   const { pathname } = useLocation();
 
   // Check if login then redirect to login page;
-  const isAuthenticated = Cookies.get("auth");
+  const isAuthenticated = getAuthToken();
   if (!isAuthenticated) return <Navigate to="/login" />;
 
   // Check whether the user is authorized
