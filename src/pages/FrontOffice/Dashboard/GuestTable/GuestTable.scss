@@ -1,0 +1,16 @@
+td {
+  width: 20%;
+  max-width: calc(calc(100vw - 284px) / 6);
+  padding: 8px;
+
+  div:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:last-child {
+    min-width: 132px;
+    text-align: center;
+  }
+}

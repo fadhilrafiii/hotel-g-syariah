@@ -22,6 +22,7 @@ const Sidebar = React.memo(() => {
         const isOpened = currentSubmodule === path;
         return (
           <a
+            key={path}
             className={`flex items-center gap-x-2 p-3 rounded-xl ${
               isOpened ? "bg-green-600" : "bg-transparent"
             }`}
