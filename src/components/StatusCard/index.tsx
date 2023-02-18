@@ -15,6 +15,16 @@ interface StatusCardProps {
   total: number;
 }
 
+// @NOTE: FOR TAILWIND TO READ DYNAMIC CLASS
+// bg-green-100
+// text-green-800
+// bg-blue-100
+// text-blue-800
+// bg-amber-100
+// text-amber-800
+// bg-fuchsia-100
+// text-fuchsia-800
+
 const StatusCard = ({ color, text, Icon, total }: StatusCardProps) => {
   const bgColorClass = `bg-${color}-100`;
   const textColorClass = `text-${color}-800`;
