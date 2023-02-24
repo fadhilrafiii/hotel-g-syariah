@@ -21,6 +21,14 @@ enum Colors {
   Gray700 = "#374151",
   Gray800 = "#1f2937",
   Gray900 = "#111827",
+
+  Blue500 = "#3b82f6",
+
+  Fuchsia600 = "#c026d3",
+
+  Rose500 = "#F43F5E",
+
+  Amber500 = "#F59E0B",
 }
 
 export default Colors;

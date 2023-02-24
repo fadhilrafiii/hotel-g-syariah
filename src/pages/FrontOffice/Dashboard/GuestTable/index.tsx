@@ -6,7 +6,7 @@ import "./GuestTable.scss";
 
 const GuestTable = () => {
   return (
-    <div className="bg-blue-50 px-6 py-5 rounded-lg">
+    <div className="bg-blue-50 px-6 py-5 rounded-lg h-full">
       <h3 className="text-2xl font-semibold !leading-normal mb-5">Data Tamu</h3>
       <table className="bg-white rounded-lg">
         <thead className="border-b border-gray-400">

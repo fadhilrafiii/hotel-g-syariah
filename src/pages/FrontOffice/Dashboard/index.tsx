@@ -1,6 +1,7 @@
 import GuestTable from "./GuestTable";
 import Rooms from "./Rooms";
 import RoomStatusCards from "./RoomStatusCards";
+import TransactionChart from "./TransactionChart";
 
 const FrontOfficeDashboard = () => {
   return (
@@ -9,7 +10,7 @@ const FrontOfficeDashboard = () => {
       <Rooms />
       <div className="flex -mx-3 justify-start">
         <div className="basis-1/2 px-3 flex-shrink-0">
-          <GuestTable />
+          <TransactionChart />
         </div>
         <div className="basis-1/2 px-3 flex-shrink-0">
           <GuestTable />
