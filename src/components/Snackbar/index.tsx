@@ -27,6 +27,7 @@ const Snackbar = () => {
     >
       <span>{message}</span>
       <button
+        type="button"
         onClick={hide}
         className={`flex items-center justify-center text-xl w-6 h-6 rounded-full ${
           type === SnackbarTypes.SUCCESS

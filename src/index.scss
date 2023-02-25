@@ -1,5 +1,13 @@
 @use '/src/styles/base';
 
+* {
+  color: #4B5563;
+}
+
 .rdrInputRange {
   display: none !important;
+}
+
+*[class^="Mui"] {
+  font-family: Inter, sans-serif !important;
 }

@@ -151,6 +151,7 @@ const DateRangePicker = ({
   return (
     <div className="relative">
       <button
+        type="button"
         className="flex items-center gap-x-[6px] font-semibold text-gray-600 text-base py-2 px-3 rounded-md drop-shadow bg-gray-100"
         onClick={() => setShouldShowCalendar((prev) => !prev)}
       >
