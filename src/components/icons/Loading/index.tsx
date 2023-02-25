@@ -25,11 +25,11 @@ const Loading = ({
         cx="50"
         cy="50"
         r="32"
-        stroke-width="8"
+        strokeWidth="8"
         stroke={color}
-        stroke-dasharray="50.26548245743669 50.26548245743669"
+        strokeDasharray="50.26548245743669 50.26548245743669"
         fill="none"
-        stroke-linecap="round"
+        strokeLinecap="round"
       >
         <animateTransform
           attributeName="transform"
@@ -49,7 +49,7 @@ const Loading = ({
         strokeDasharray="36.12831551628262 36.12831551628262"
         strokeDashoffset="36.12831551628262"
         fill="none"
-        stroke-linecap="round"
+        strokeLinecap="round"
       >
         <animateTransform
           attributeName="transform"

@@ -22,13 +22,31 @@ enum Colors {
   Gray800 = "#1f2937",
   Gray900 = "#111827",
 
+  Blue50 = "#eff6ff",
+  Blue100 = "#dbeafe",
+  Blue200 = "#bfdbfe",
+  Blue300 = "#93c5fd",
+  Blue400 = "#60a5fa",
   Blue500 = "#3b82f6",
+  Blue600 = "#2563eb",
+  Blue700 = "#1d4ed8",
+  Blue800 = "#075985",
+  Blue900 = "#0c4a6e",
+
+  Amber50 = "#fffbeb",
+  Amber100 = "#fef3c7",
+  Amber200 = "#fde68a",
+  Amber300 = "#fcd34d",
+  Amber400 = "#fbbf24",
+  Amber500 = "#f59e0b",
+  Amber600 = "#d97706",
+  Amber700 = "#b45309",
+  Amber800 = "#92400e",
+  Amber900 = "#78350f",
 
   Fuchsia600 = "#c026d3",
 
   Rose500 = "#F43F5E",
-
-  Amber500 = "#F59E0B",
 }
 
 export default Colors;
