@@ -25,7 +25,7 @@ const Snackbar = () => {
         type === SnackbarTypes.SUCCESS ? "bg-green-600" : "bg-red-600"
       } `}
     >
-      <span>{message}</span>
+      <span className="text-white">{message}</span>
       <button
         type="button"
         onClick={hide}

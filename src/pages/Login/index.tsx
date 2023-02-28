@@ -93,7 +93,7 @@ const LoginPage = () => {
               Lupa Password
             </Link>
             <button
-              type="button"
+              type="submit"
               className="uppercase text-white px-6 py-3 bg-green-700 rounded-[10px] w-full flex justify-center"
             >
               {loading ? (
