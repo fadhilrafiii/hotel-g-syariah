@@ -8,16 +8,16 @@ const StatusHouseKeeping = () => {
         <span className="rounded-[24px] text-base py-1 px-4 border-2">
           Terisi:{dummy.terisi}
         </span>
-        <span className="rounded-[24px] text-base py-1 px-4 bg-red-200 text-red-800">
+        <span className="rounded-[24px] text-base py-1 px-4 border-2 border-red-200 bg-red-200 text-red-800">
           Dirty: {dummy.dirty}
         </span>
-        <span className="rounded-[24px] text-base py-1 px-4 bg-green-200 text-green-800">
+        <span className="rounded-[24px] text-base py-1 px-4 border-2 border-green-200 bg-green-200 text-green-800">
           Clean: {dummy.clean}
         </span>
-        <span className="rounded-[24px] text-base py-1 px-4 bg-blue-200 text-blue-800">
+        <span className="rounded-[24px] text-base py-1 px-4 border-2 border-blue-200 bg-blue-200 text-blue-800">
           VCI: {dummy.vci}
         </span>
-        <span className="rounded-[24px] text-base py-1 px-4 bg-yellow-200 text-yellow-800">
+        <span className="rounded-[24px] text-base py-1 px-4 border-2 border-yellow-200 bg-yellow-200 text-yellow-800">
           Repair: {dummy.repair}
         </span>
       </div>
