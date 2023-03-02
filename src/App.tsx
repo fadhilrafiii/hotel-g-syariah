@@ -15,6 +15,15 @@ const FrontOfficeDashboard = lazy(
   () => import("src/pages/FrontOffice/Dashboard")
 );
 const FrontOfficeKamarPage = lazy(() => import("src/pages/FrontOffice/Kamar"));
+
+// House Keeping
+const HouseKeepingDashboard = lazy(
+  () => import("src/pages/HouseKeeping/Dashboard")
+);
+const HouseKeepingKamarPage = lazy(
+  () => import("src/pages/HouseKeeping/StatusKamar")
+);
+
 const NotFoundPage = lazy(() => import("src/pages/NotFound"));
 
 const App = () => {
@@ -58,6 +67,28 @@ const App = () => {
                         type={RouteEnum.Private}
                         userRole={Roles.Admin}
                         Component={<FrontOfficeKamarPage />}
+                      />
+                    }
+                  />
+                </Route>
+                <Route path="/house-keeping">
+                  <Route
+                    index
+                    element={
+                      <RBACRouter
+                        type={RouteEnum.Private}
+                        userRole={Roles.Admin}
+                        Component={<HouseKeepingDashboard />}
+                      />
+                    }
+                  />
+                  <Route
+                    path="status-kamar"
+                    element={
+                      <RBACRouter
+                        type={RouteEnum.Private}
+                        userRole={Roles.Admin}
+                        Component={<HouseKeepingKamarPage />}
                       />
                     }
                   />
