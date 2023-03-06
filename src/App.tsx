@@ -23,6 +23,9 @@ const HouseKeepingDashboard = lazy(
 const HouseKeepingKamarPage = lazy(
   () => import("src/pages/HouseKeeping/StatusKamar")
 );
+const HouseKeepingLostFoundPage = lazy(
+  () => import("src/pages/HouseKeeping/LostFound")
+);
 
 const NotFoundPage = lazy(() => import("src/pages/NotFound"));
 
@@ -89,6 +92,16 @@ const App = () => {
                         type={RouteEnum.Private}
                         userRole={Roles.Admin}
                         Component={<HouseKeepingKamarPage />}
+                      />
+                    }
+                  />
+                  <Route
+                    path="lost-found"
+                    element={
+                      <RBACRouter
+                        type={RouteEnum.Private}
+                        userRole={Roles.Admin}
+                        Component={<HouseKeepingLostFoundPage />}
                       />
                     }
                   />

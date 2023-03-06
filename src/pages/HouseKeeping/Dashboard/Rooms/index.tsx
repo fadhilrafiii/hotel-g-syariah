@@ -5,9 +5,8 @@ const Rooms = () => {
   return (
     <div className="flex -mx-3">
       {dummy.map((data: any, index: number) => (
-        <div className="px-3 basis-1/6">
+        <div key={index} className="px-3 basis-1/6">
           <RoomCardHK
-            key={index}
             image={data.image}
             title={data.title}
             totalTerisi={data.terisi}

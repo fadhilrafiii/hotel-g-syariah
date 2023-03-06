@@ -1,6 +1,6 @@
 import { dummy } from "./constants";
 
-const HKRoomTable = () => {
+const HKLostFoundTable = () => {
   return (
     <div className="bg-blue-50 px-3 pt-5 pb-12 rounded-lg h-full">
       <div className="flex gap-2 font-medium">
@@ -23,22 +23,25 @@ const HKRoomTable = () => {
               <input type="checkbox" />
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              No Kamar
+              Nama Barang
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Tipe Kamar
+              Deskripsi
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              HK Status
+              Lokasi Penemuan
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Staff HK
+              Waktu
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Note
+              Penemu
             </th>
             <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Reservasi
+              Status
+            </th>
+            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
+              Pemilik & No Telp
             </th>
           </tr>
         </thead>
@@ -50,22 +53,25 @@ const HKRoomTable = () => {
                   <input type="checkbox" />
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.room}
+                  {data.item}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.type}
+                  {data.desc}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-red-200 text-red-800 w-14 font-medium text-xs rounded-md px-2 py-1">{data.status} -</p>
+                  {data.loc}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.staff}
+                  {data.time}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.note}
+                  {data.by}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-gray-200 text-gray-800 w-24 font-medium text-xs text-center rounded-xl px-2 py-1">{data.reserv}</p>
+                  {data.status}
+                </td>
+                <td className="px-3 py-2 text-left border-b border-gray-400">
+                  {data.owner}
                 </td>
               </tr>
             );
@@ -92,4 +98,4 @@ const HKRoomTable = () => {
   );
 };
 
-export default HKRoomTable;
+export default HKLostFoundTable;
