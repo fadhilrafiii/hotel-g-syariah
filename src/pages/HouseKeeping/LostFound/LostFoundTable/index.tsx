@@ -7,7 +7,7 @@ const HKLostFoundTable = () => {
         <input
           type="text"
           placeholder="Cari. . ."
-          className="px-3 rounded-lg border-2 text-sm"
+          className="px-3 py-2 rounded-lg outline-none border-2 text-sm"
         />
         <button className="rounded-lg bg-blue-600 text-sm border-2 border-blue-50 text-white py-1 px-3">
           Cari

@@ -7,7 +7,7 @@ const HKRoomTable = () => {
         <input
           type="text"
           placeholder="Cari. . ."
-          className="px-3 rounded-lg border-2 text-sm"
+          className="px-3 py-2 rounded-lg outline-none border-2 text-sm"
         />
         <button className="rounded-lg bg-blue-600 text-sm border-2 border-blue-50 text-white py-1 px-3">
           Cari
@@ -56,7 +56,9 @@ const HKRoomTable = () => {
                   {data.type}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-red-200 text-red-800 w-14 font-medium text-xs rounded-md px-2 py-1">{data.status} -</p>
+                  <p className="bg-red-200 text-red-800 w-14 font-medium text-xs rounded-md px-2 py-1">
+                    {data.status} -
+                  </p>
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
                   {data.staff}
@@ -65,7 +67,9 @@ const HKRoomTable = () => {
                   {data.note}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-gray-200 text-gray-800 w-24 font-medium text-xs text-center rounded-xl px-2 py-1">{data.reserv}</p>
+                  <p className="bg-gray-200 text-gray-800 w-24 font-medium text-xs text-center rounded-xl px-2 py-1">
+                    {data.reserv}
+                  </p>
                 </td>
               </tr>
             );

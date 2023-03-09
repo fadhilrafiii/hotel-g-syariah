@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import Modal from "src/components/Modal";
-import HKLostFoundTable from "./LostFoundTable";
-import ModalLostFound from "./AddLostFoundModal";
+import ModalLostFound from "../LostFound/AddLostFoundModal";
+import HKLostFoundTable from "../LostFound/LostFoundTable";
 
-const HouseKeepingLostFoundPage = () => {
+const HouseKeepingLinenPage = () => {
   return (
     <div className="flex flex-col gap-6 p-2">
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-2xl">
-          Lost & Found <span className="text-base font-normal">{`(67)`}</span>
+          Linen <span className="text-base font-normal">{`(67)`}</span>
         </h3>
         <ModalLostFound />
       </div>
@@ -28,4 +26,4 @@ const HouseKeepingLostFoundPage = () => {
   );
 };
 
-export default HouseKeepingLostFoundPage;
+export default HouseKeepingLinenPage;
