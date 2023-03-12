@@ -1,14 +1,15 @@
 import { Dayjs } from "dayjs";
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import DatePicker from "src/components/DatePicker";
 import Drawer from "src/components/Drawer";
 import InformationCircleOutlinedIcon from "src/components/icons/InformationCircleOutlinedIcon";
-import Modal from "src/components/Modal";
 import {
   AddReservationSteps,
   Reservation,
   ReservationType,
 } from "src/shared/types/reservation";
+import dayjs from "src/shared/utils/dayjs";
 import ReservationStep from "./ReservationStep";
 import ReservationTypeToggler from "./ReservationTypeToggler";
 
@@ -18,7 +19,6 @@ interface AddReservationProps {
 }
 
 const AddReservation = ({ isOpen, onClose }: AddReservationProps) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
   const [searchParams] = useSearchParams();
   const [reservation, setReservation] = useState<Reservation>({
     type: ReservationType.Individual,
@@ -68,24 +68,30 @@ const AddReservation = ({ isOpen, onClose }: AddReservationProps) => {
             </div>
           </div>
           <div className="flex -mx-3 items-end">
-            <div className="px-3 basis-1/6"></div>
-            <div className="px-3 basis-1/6"></div>
+            <div className="px-3 basis-1/6">
+              <DatePicker
+                selected={reservation.checkInDate}
+                minDate={dayjs()}
+                onChange={(date: Dayjs | null) =>
+                  handleChangeDate(date, "checkInDate")
+                }
+              />
+            </div>
+            <div className="px-3 basis-1/6">
+              <DatePicker
+                selected={reservation.checkOutDate}
+                minDate={dayjs()}
+                onChange={(date: Dayjs | null) =>
+                  handleChangeDate(date, "checkOutDate")
+                }
+              />
+            </div>
             <div className="px-3 basis-1/6"></div>
             <div className="px-3 basis-1/6"></div>
             <div className="px-3 basis-1/6"></div>
             <div className="px-3 basis-1/6"></div>
           </div>
         </section>
-        <button onClick={() => setIsOpenModal(true)}>buka</button>
-        <Modal
-          title="Judul Modal"
-          isOpen={isOpenModal}
-          onClose={() => setIsOpenModal(false)}
-          onPrimaryButtonClick={() => console.log("CLICKED!")}
-          onSecondaryButtonClick={() => setIsOpenModal(false)}
-        >
-          Ini isinya
-        </Modal>
       </div>
     </Drawer>
   );
