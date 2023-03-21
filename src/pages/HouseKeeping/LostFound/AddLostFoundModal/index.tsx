@@ -18,6 +18,7 @@ const ModalLostFound = () => {
         onClose={() => setIsOpenModal(false)}
         onPrimaryButtonClick={() => console.log("CLICKED!")}
         onSecondaryButtonClick={() => setIsOpenModal(false)}
+        primaryButtonText="Simpan"
       >
         <div className="flex gap-4 py-2">
           <div className="w-3/4">
@@ -59,14 +60,10 @@ const ModalLostFound = () => {
             <p className="font-semibold">
               Waktu Penemuan <span className="text-red-500">*</span>
             </p>
-            <select
-              name=""
-              id=""
+            <input
+              type="date"
               className="w-full px-3 py-2 rounded-lg outline-none border-2 text-sm"
-            >
-              <option value="">Pilih waktu...</option>
-              <option value=""></option>
-            </select>
+            />
           </div>
           <div className="w-1/2">
             <p className="font-semibold">

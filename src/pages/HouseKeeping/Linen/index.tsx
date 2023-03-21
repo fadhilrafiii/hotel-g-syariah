@@ -1,5 +1,5 @@
-import ModalLostFound from "../LostFound/AddLostFoundModal";
-import HKLostFoundTable from "../LostFound/LostFoundTable";
+import AddLinenModal from "./AddLinenModal";
+import LinenTable from "./LinenTable";
 
 const HouseKeepingLinenPage = () => {
   return (
@@ -8,20 +8,20 @@ const HouseKeepingLinenPage = () => {
         <h3 className="font-semibold text-2xl">
           Linen <span className="text-base font-normal">{`(67)`}</span>
         </h3>
-        <ModalLostFound />
+        <AddLinenModal />
       </div>
       <div className="flex gap-2">
         <div className="text-sm font-medium bg-blue-600 rounded-3xl text-white py-1 px-3 cursor-pointer">
-          Semua Barang
+          Semua
         </div>
         <div className="text-sm font-medium border-2 rounded-3xl py-1 px-3 cursor-pointer">
-          Found
+          Diambil
         </div>
         <div className="text-sm font-medium border-2 rounded-3xl py-1 px-3 cursor-pointer">
-          Taken
+          Diterima
         </div>
       </div>
-      <HKLostFoundTable />
+      <LinenTable />
     </div>
   );
 };
