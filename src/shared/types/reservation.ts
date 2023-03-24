@@ -15,4 +15,7 @@ export interface Reservation {
   type: ReservationType;
   checkInDate?: Dayjs | null;
   checkOutDate?: Dayjs | null;
+  numOfRoom: number;
+  numOfAdult: number;
+  numOfChildren: number;
 }

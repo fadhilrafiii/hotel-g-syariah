@@ -17,6 +17,6 @@
     border-radius: 50%;
     inset: calc(50% - var(--b) / 2);
     background: var(--color);
-    transform: rotate(calc(var(--percentage)*3.6deg)) translateY(calc(50% - calc(var(--width) * 5px) / 2));
+    transform: rotate(calc(var(--percentage)*3.6deg)) translateY(calc(50% - calc(var(--width) * 1px) / 2));
   }
 }

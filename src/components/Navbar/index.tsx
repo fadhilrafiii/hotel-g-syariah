@@ -17,7 +17,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="flex justify-between items-center gap-x-2 p-6 fixed top-0 left-0 right-0 h-[75px] bg-white">
+    <header className="flex justify-between items-center gap-x-2 p-6 fixed top-0 left-0 right-0 h-[75px] bg-white z-10">
       <h3 className="text-2xl font-semibold text-green-600">G Syariah Hotel</h3>
       <div className="flex justify-center items-center gap-x-9">
         {MODULES.map((mod: Module) => {

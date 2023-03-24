@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import useResize from "src/shared/hooks/useResize";
 import Colors from "src/shared/types/color";
+
+import "./PieChart.scss";
 
 interface PieChartMeterProps {
   color?: string;
@@ -21,9 +24,11 @@ const PieChartMeter = ({
   const [pieWidth, setPieWidth] = useState(0);
   const pieRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  const handlePieWidthChange = () => {
     if (pieRef?.current) setPieWidth(pieRef.current?.clientWidth || 0);
-  }, [pieRef?.current]);
+  };
+
+  useResize(handlePieWidthChange);
 
   return (
     <div

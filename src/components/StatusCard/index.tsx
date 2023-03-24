@@ -3,7 +3,7 @@ import IconProps from "../icons/shared";
 
 enum StatusCardColors {
   Green = "green",
-  Fuchsia = "fuchsia",
+  Gray = "gray",
   Blue = "blue",
   Amber = "amber",
 }
@@ -22,8 +22,8 @@ interface StatusCardProps {
 // text-blue-800
 // bg-amber-100
 // text-amber-800
-// bg-fuchsia-100
-// text-fuchsia-800
+// bg-gray-100
+// text-gray-800
 
 const StatusCard = ({ color, text, Icon, total }: StatusCardProps) => {
   const bgColorClass = `bg-${color}-100`;
@@ -32,8 +32,8 @@ const StatusCard = ({ color, text, Icon, total }: StatusCardProps) => {
   // For tailwind dynamic class
   // bg-green-100
   // text-green-800
-  // bg-fuchsia-100
-  // text-fuchsia-800
+  // bg-gray-100
+  // text-gray-800
   // bg-blue-100
   // text-blue-800
   // bg-amber-100

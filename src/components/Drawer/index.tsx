@@ -36,10 +36,10 @@ const Drawer = ({ isOpen, children, position, onClose }: DrawerProps) => {
       <div
         style={{
           height: [DrawerPosition.Top, DrawerPosition.Bottom].includes(position)
-            ? "80%"
+            ? "85%"
             : "100%",
           width: [DrawerPosition.Left, DrawerPosition.Right].includes(position)
-            ? "80%"
+            ? "85%"
             : "100%",
           top: position === DrawerPosition.Top ? 0 : "unset",
           bottom: position === DrawerPosition.Bottom ? 0 : "unset",

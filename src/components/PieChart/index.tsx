@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { ReactNode, useState, useRef, useEffect } from "react";
+import useResize from "src/shared/hooks/useResize";
 import PieChartMeter from "./PieChartMeter";
 
 interface PieChartData {
@@ -8,12 +9,11 @@ interface PieChartData {
 
 interface PieChartProps {
   data: PieChartData | PieChartData[];
-  width?: number;
   thickness?: number;
   centerContent?: ReactNode;
 }
 
-const PieChart = ({ centerContent, width, thickness, data }: PieChartProps) => {
+const PieChart = ({ centerContent, thickness, data }: PieChartProps) => {
   return (
     <div className="relative pie-container aspect-square">
       {Array.isArray(data) ? (
@@ -31,7 +31,6 @@ const PieChart = ({ centerContent, width, thickness, data }: PieChartProps) => {
         </>
       ) : (
         <PieChartMeter
-          width={width}
           value={data.value}
           color={data.color}
           thickness={thickness}

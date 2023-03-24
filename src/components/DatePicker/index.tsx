@@ -32,7 +32,7 @@ const DatePicker = ({
   };
 
   return (
-    <div className="relative flex items-center justify-between h-[35px] py-2 pr-3 rounded-md border border-gray-400">
+    <div className="relative flex items-center justify-between h-[35px] py-2 pr-3 rounded-md border border-gray-400 w-full">
       <ReactDatePicker
         placeholderText="Select Date..."
         {...props}

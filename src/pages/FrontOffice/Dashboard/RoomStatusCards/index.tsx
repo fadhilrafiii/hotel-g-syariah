@@ -1,6 +1,5 @@
 import React from "react";
 import StatusCard from "src/components/StatusCard";
-import AccountFilledIcon from "src/components/icons/AccountFilledIcon";
 import HotelOutlinedIcon from "src/components/icons/HotelOutlinedIcon";
 import LogoutOutlinedIcon from "src/components/icons/LogoutOutlinedIcon";
 import BookmarkOrderOutlinedIcon from "src/components/icons/BookmarkOrderOutlinedIcon";
@@ -19,7 +18,7 @@ const RoomStatusCards = () => {
       </div>
       <div className="px-3 basis-1/4">
         <StatusCard
-          color={StatusCard.Color.Fuchsia}
+          color={StatusCard.Color.Gray}
           text="Kamar Checkout"
           Icon={LogoutOutlinedIcon}
           total={25}

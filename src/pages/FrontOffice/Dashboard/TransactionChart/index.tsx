@@ -2,23 +2,14 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import PieChart from "src/components/PieChart";
 import { dummy } from "./constants";
 
-import "./TransactionChart.scss";
-
 const TransactionChart = () => {
-  const [pieWidth, setPieWidth] = useState(0);
-  const pieRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (pieRef?.current) setPieWidth(pieRef.current?.clientWidth || 0);
-  }, [pieRef?.current]);
-
   const totalData = useMemo(
     () => dummy.reduce((total, data) => total + data.value, 0),
     []
   );
   const chartData = useMemo(() => {
     let totalPrevValue = 0;
-    return dummy.map((data, idx: number) => {
+    return dummy.map((data) => {
       const currValue = ((data.value + totalPrevValue) / totalData) * 100;
       totalPrevValue = data.value + totalPrevValue;
       return {
@@ -27,8 +18,6 @@ const TransactionChart = () => {
       };
     });
   }, []);
-
-  console.log(chartData);
 
   return (
     <div className="bg-blue-50 px-6 py-5 rounded-lg h-full">

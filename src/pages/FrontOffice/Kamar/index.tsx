@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Range, RangeKeyDict } from "react-date-range";
 import { useSearchParams } from "react-router-dom";
+import Button from "src/components/Button";
 import DateRangePicker, {
   DateRangePickerPopperPosition,
 } from "src/components/DateRangePicker";
@@ -13,7 +14,7 @@ import { AddReservationSteps } from "src/shared/types/reservation";
 import { SnackbarTypes } from "src/shared/types/snackbar";
 
 import dayjs from "src/shared/utils/dayjs";
-import AddReservation from "./AddReservation";
+import AddReservation from "../AddReservation";
 
 const FrontOfficeKamarPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -70,14 +71,14 @@ const FrontOfficeKamarPage = () => {
             position={DateRangePickerPopperPosition.BottomRight}
             onChange={handleChangeDateRange}
           />
-          <button
-            type="button"
-            className="flex items-center gap-x-[10px] px-4 py-2 font-semibold drop-shadow text-white rounded-md bg-blue-600"
-            onClick={handleOpenAddReservationModal}
+          <Button
+            variant={Button.Variant.Filled}
+            theme={Button.Theme.Primary}
+            startIcon={<PlusOutlinedIcon size={20} />}
+            className="w-auto"
           >
-            <PlusOutlinedIcon color={Colors.White} size={20} />
             Reservasi Baru
-          </button>
+          </Button>
         </div>
         <AddReservation
           isOpen={isOpenAddReservationDrawer}
