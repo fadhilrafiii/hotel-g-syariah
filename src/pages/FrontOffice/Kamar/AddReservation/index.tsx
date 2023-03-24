@@ -9,6 +9,7 @@ import {
   Reservation,
   ReservationType,
 } from "src/shared/types/reservation";
+import dayjs from "src/shared/utils/dayjs";
 import ReservationStep from "./ReservationStep";
 import ReservationTypeToggler from "./ReservationTypeToggler";
 
@@ -69,13 +70,22 @@ const AddReservation = ({ isOpen, onClose }: AddReservationProps) => {
           <div className="flex -mx-3 items-end">
             <div className="px-3 basis-1/6">
               <DatePicker
-                value={reservation.checkInDate}
-                handleChange={(date: Dayjs | null) =>
+                selected={reservation.checkInDate}
+                minDate={dayjs()}
+                onChange={(date: Dayjs | null) =>
                   handleChangeDate(date, "checkInDate")
                 }
               />
             </div>
-            <div className="px-3 basis-1/6"></div>
+            <div className="px-3 basis-1/6">
+              <DatePicker
+                selected={reservation.checkOutDate}
+                minDate={dayjs()}
+                onChange={(date: Dayjs | null) =>
+                  handleChangeDate(date, "checkOutDate")
+                }
+              />
+            </div>
             <div className="px-3 basis-1/6"></div>
             <div className="px-3 basis-1/6"></div>
             <div className="px-3 basis-1/6"></div>

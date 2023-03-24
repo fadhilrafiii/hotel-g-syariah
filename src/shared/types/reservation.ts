@@ -13,6 +13,6 @@ export enum ReservationType {
 
 export interface Reservation {
   type: ReservationType;
-  checkInDate: Dayjs | null;
-  checkOutDate: Dayjs | null;
+  checkInDate?: Dayjs | null;
+  checkOutDate?: Dayjs | null;
 }
