@@ -1,0 +1,65 @@
+$primary-button-color: #2563EB;
+$primary-text-color: #2563EB;
+$secondary-button-color: #F3F4F6;
+$secondary-text-color: #4B5563;
+
+.filled, .outlined {
+  border: 1px solid;
+  line-height: 1.1;
+}
+
+.primary.outlined {
+  border-color: $primary-button-color;
+  background-color: white;
+  color: $primary-text-color;
+
+  & * {
+    color: $primary-text-color;
+  }
+
+  path {
+    fill: $primary-text-color;
+  }
+}
+
+.primary.filled {
+  border-color: $primary-button-color;
+  background-color: $primary-button-color;
+  color: white;
+
+  & * {
+    color: white;
+  }
+
+  path {
+    fill: white;
+  }
+}
+
+.secondary.outlined {
+  border-color: $secondary-button-color;
+  background-color: white;
+  color: $secondary-text-color;
+
+  & * {
+    color: $secondary-text-color;
+  }
+
+  path {
+    fill: $secondary-text-color;
+  }
+}
+
+.secondary.filled {
+  border-color: $secondary-button-color;
+  background-color: $secondary-button-color;
+  color: $secondary-text-color;
+
+  & * {
+    color: $secondary-text-color;
+  }
+
+  path {
+    fill: $secondary-text-color;
+  }
+}
