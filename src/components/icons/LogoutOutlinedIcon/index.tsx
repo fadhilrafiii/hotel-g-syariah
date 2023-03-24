@@ -1,8 +1,9 @@
+import Colors from "src/shared/types/color";
 import IconProps from "../shared";
 
 const LogoutOutlinedIcon = ({
   size = 24,
-  color = "#86198F",
+  color = Colors.Gray800,
   ...props
 }: IconProps) => {
   return (
