@@ -22,8 +22,8 @@ const RoomOrderFormItem = ({
   onInput,
 }: RoomOrderFormItemProps) => {
   return (
-    <div className="flex flex-wrap -m-3">
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+    <div className="flex flex-wrap -m-2">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Tipe Kamar" required>
           <Select
             value={roomOrder.type}
@@ -32,7 +32,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Nomor Kamar" required>
           <Select
             value={roomOrder.id}
@@ -41,7 +41,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Breakfast" required>
           <Select
             value={roomOrder.withBreakfast}
@@ -50,7 +50,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Jenis Pembelian" required>
           <Select
             value={roomOrder.transactionType}
@@ -59,7 +59,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer
           label="Jenis OTA"
           required
@@ -74,7 +74,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer
           label="Kode Booking OTA"
           required
@@ -88,7 +88,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/3 p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/3 p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Note">
           <Input
             value={roomOrder.note}
@@ -97,7 +97,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/3 p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/3 p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Instansi (GOV n Corp)">
           <Input
             value={roomOrder.note}
@@ -116,7 +116,7 @@ const RoomOrderFormItem = ({
           />
         </FieldContainer>
       </div>
-      <div className="basis-1/6 max-w-[calc(100%/6)] p-3 flex-shrink-0 flex-grow">
+      <div className="basis-1/6 max-w-[calc(100%/6)] p-2 flex-shrink-0 flex-grow">
         <FieldContainer label="Total Biaya">
           <Input readOnly value={0} className="bg-transparent" />
         </FieldContainer>

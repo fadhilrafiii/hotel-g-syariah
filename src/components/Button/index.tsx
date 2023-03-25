@@ -10,6 +10,7 @@ enum ButtonVariant {
 enum ButtonTheme {
   Primary = "primary",
   Secondary = "secondary",
+  Danger = "danger",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  children: ReactNode | ReactNode[];
+  children?: ReactNode | ReactNode[];
   isCenter?: boolean;
 }
 
@@ -26,7 +27,7 @@ const Button = ({
   theme = ButtonTheme.Primary,
   startIcon = null,
   endIcon = null,
-  children,
+  children = null,
   isCenter = false,
   className = "",
   disabled = false,
@@ -36,7 +37,7 @@ const Button = ({
     <button
       type="button"
       disabled={disabled}
-      className={`${variant} ${theme} px-3 py-2 rounded-md flex items-center gap-x-[6px] font-semibold ${
+      className={`${variant} ${theme} w-auto !leading-[1.1] border px-3 py-2 rounded-md flex items-center gap-x-[6px] font-semibold ${
         isCenter ? "justify-center" : "justify-between"
       } ${className} ${disabled ? "opacity-40" : ""}`}
       {...props}
