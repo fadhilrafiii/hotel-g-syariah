@@ -76,6 +76,7 @@ const FrontOfficeKamarPage = () => {
             theme={Button.Theme.Primary}
             startIcon={<PlusOutlinedIcon size={20} />}
             className="w-auto"
+            onClick={handleOpenAddReservationModal}
           >
             Reservasi Baru
           </Button>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Button from "src/components/Button";
 import PlusOutlinedIcon from "src/components/icons/PlusOutlinedIcon";
 import TimeDropdown from "src/components/TimeDropdown";
+import { AddReservationSteps } from "src/shared/types/reservation";
 import AddReservation from "../AddReservation";
 import GuestTable from "./GuestTable";
 import Rooms from "./Rooms";
@@ -9,12 +11,18 @@ import RoomStatusCards from "./RoomStatusCards";
 import TransactionChart from "./TransactionChart";
 
 const FrontOfficeDashboard = () => {
+  const [_, setSearchParams] = useSearchParams();
   const [filterTime, setFilterTime] = useState<string | null>(null);
   const [isOpenAddReservationDrawer, setIsOpenAddReservationDrawer] =
     useState(false);
 
   const handleChangeFilterTime = (value: string) => {
     setFilterTime(value);
+  };
+
+  const handleOpenAddReservationDrawer = () => {
+    setSearchParams({ add_reservation: AddReservationSteps.RoomReservation });
+    setIsOpenAddReservationDrawer(true);
   };
 
   return (
@@ -28,7 +36,7 @@ const FrontOfficeDashboard = () => {
           variant={Button.Variant.Filled}
           theme={Button.Theme.Primary}
           startIcon={<PlusOutlinedIcon size={20} />}
-          onClick={() => setIsOpenAddReservationDrawer(true)}
+          onClick={handleOpenAddReservationDrawer}
         >
           Reservasi Baru
         </Button>

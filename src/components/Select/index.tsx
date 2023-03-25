@@ -28,7 +28,7 @@ const Select = ({
   containerClass = "",
   value,
   onChange,
-  placeholder = "Pilih...",
+  placeholder = "Select...",
   options = [],
   disabled = false,
   multi = false,

@@ -3,11 +3,8 @@ $primary-text-color: #2563EB;
 $secondary-button-color: #F3F4F6;
 $secondary-outlined-button-color: #9ca3af;
 $secondary-text-color: #4B5563;
-
-.filled, .outlined {
-  border: 1px solid;
-  line-height: 1.1;
-}
+$danger-button-color: #ffe4e6;
+$danger-text-color: #be123c;
 
 .primary.outlined {
   border-color: $primary-button-color;
@@ -37,6 +34,7 @@ $secondary-text-color: #4B5563;
   }
 }
 
+
 .secondary.outlined {
   border-color: $secondary-outlined-button-color;
   background-color: white;
@@ -62,5 +60,33 @@ $secondary-text-color: #4B5563;
 
   path {
     fill: $secondary-text-color;
+  }
+}
+
+.danger.outlined {
+  border-color: $danger-text-color;
+  background-color: white;
+  color: $danger-text-color;
+
+  & * {
+    color: $danger-text-color;
+  }
+
+  path {
+    fill: $danger-text-color;
+  }
+}
+
+.danger.filled {
+  border-color: $danger-button-color;
+  background-color: $danger-button-color;
+  color: $danger-text-color;
+
+  & * {
+    color: $danger-text-color;;
+  }
+
+  path {
+    fill: $danger-text-color;;
   }
 }

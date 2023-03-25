@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Button from "src/components/Button";
 import PlusOutlinedIcon from "src/components/icons/PlusOutlinedIcon";
+import TrashTwoToneIcon from "src/components/icons/TrashTwoToneIcon";
 import { OptionValue } from "src/components/Select";
 import { Reservation } from "src/shared/types/reservation";
 import { RoomOrder } from "src/shared/types/room";
@@ -68,6 +69,13 @@ const RoomOrderForm = ({ reservation, setReservation }: RoomOrderFormProps) => {
     }));
   };
 
+  const handleRemoveRoomOrderFormItem = (removeIdx: number) => {
+    setReservation((prev) => ({
+      ...prev,
+      rooms: prev.rooms.filter((_, idx) => idx !== removeIdx),
+    }));
+  };
+
   const numOfRoomOrders = reservation.rooms.length;
 
   return (
@@ -76,9 +84,18 @@ const RoomOrderForm = ({ reservation, setReservation }: RoomOrderFormProps) => {
         {reservation.rooms.map((roomOrder: RoomOrder, idx: number) => {
           return (
             <div className="bg-blue-50 p-6 flex flex-col gap-y-6" key={idx}>
-              <h3 className="pb-6 border-b border-gray-300 font-semibold text-2xl !leading-normal">
-                Pilih Kamar {idx + 1}
-              </h3>
+              <div className="flex justify-between items-center gap-x-6 border-b border-gray-300">
+                <h3 className="pb-6 font-semibold text-2xl !leading-normal">
+                  Pilih Kamar {idx + 1}
+                </h3>
+                <Button
+                  variant={Button.Variant.Filled}
+                  theme={Button.Theme.Danger}
+                  startIcon={<TrashTwoToneIcon size={20} />}
+                  className="drop-shadow-md"
+                  onClick={() => handleRemoveRoomOrderFormItem(idx)}
+                />
+              </div>
               <RoomOrderFormItem
                 roomOrder={roomOrder}
                 onSelect={(name: string, value: OptionValue) =>
