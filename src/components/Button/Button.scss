@@ -1,6 +1,7 @@
 $primary-button-color: #2563EB;
 $primary-text-color: #2563EB;
 $secondary-button-color: #F3F4F6;
+$secondary-outlined-button-color: #9ca3af;
 $secondary-text-color: #4B5563;
 
 .filled, .outlined {
@@ -37,7 +38,7 @@ $secondary-text-color: #4B5563;
 }
 
 .secondary.outlined {
-  border-color: $secondary-button-color;
+  border-color: $secondary-outlined-button-color;
   background-color: white;
   color: $secondary-text-color;
 

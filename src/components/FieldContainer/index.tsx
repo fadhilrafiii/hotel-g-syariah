@@ -16,11 +16,18 @@ const FieldContainer = ({
   children,
 }: FieldContainerProps) => {
   return (
-    <div className={`flex flex-col ${disabled ? "disabled" : ""}`}>
+    <div
+      className={`relative flex flex-col ${disabled ? "disabled" : ""} ${
+        required ? "required" : ""
+      }`}
+    >
       {label && (
-        <label className="inline-block pb-1 font-semibold !leading-none">
+        <label
+          className={`inline-block pb-1 font-semibold !leading-none whitespace-nowrap ${
+            disabled ? "text-gray-400" : ""
+          }`}
+        >
           {label}
-          {required && <span className="text-rose-500">*</span>}
         </label>
       )}
       <div className="flex-grow">{children}</div>

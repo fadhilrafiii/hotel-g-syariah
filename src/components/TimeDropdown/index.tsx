@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import dayjs from "src/shared/utils/dayjs";
 import Button from "../Button";
 import CalendarCheckOutlinedIcon from "../icons/CalendarCheckOutlinedIcon";
@@ -45,6 +45,7 @@ interface TimeDropdownProps {
 const TimeDropdown = ({ containerClass = "", onChange }: TimeDropdownProps) => {
   const [selectedTime, setSelectedTime] = useState(options[0].value);
   const [shouldOpenDropdown, setShouldOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     onChange(selectedTime);
@@ -55,12 +56,14 @@ const TimeDropdown = ({ containerClass = "", onChange }: TimeDropdownProps) => {
     [selectedTime]
   );
 
+  useEffect(() => {
+    if (shouldOpenDropdown && dropdownRef.current) {
+      dropdownRef.current.focus();
+    }
+  }, [shouldOpenDropdown]);
+
   return (
-    <div
-      className={`container ${containerClass} relative`}
-      tabIndex={0}
-      onBlur={() => setShouldOpenDropdown(false)}
-    >
+    <div className={`container ${containerClass} relative`}>
       <Button
         className="w-full"
         variant={Button.Variant.Filled}
@@ -72,7 +75,12 @@ const TimeDropdown = ({ containerClass = "", onChange }: TimeDropdownProps) => {
         {selectedLabel}
       </Button>
       {shouldOpenDropdown && (
-        <div className="options absolute top-[calc(100%+8px)] py-3 rounded-md w-full bg-white">
+        <div
+          ref={dropdownRef}
+          className="options absolute top-[calc(100%+8px)] py-3 rounded-md w-full bg-white"
+          tabIndex={0}
+          onBlur={() => setShouldOpenDropdown(false)}
+        >
           {options.map((opt, key) => {
             const isSelected = opt.value === selectedTime;
 

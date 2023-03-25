@@ -11,3 +11,16 @@ export enum RoomConditions {
   VCI = "VCI",
   Repair = "Repair",
 }
+
+export interface RoomOrder {
+  type: string;
+  id: string; //Nomor kamar
+  withBreakfast: boolean;
+  transactionType: string;
+  otaType?: string;
+  otaBookingNumber?: string;
+  note?: string;
+  instance?: string; // Instansi (GOV n Corp)
+  extra: string[];
+  price: number;
+}

@@ -8,6 +8,8 @@ export enum DrawerPosition {
   Right,
 }
 
+import "./Drawer.scss";
+
 interface DrawerProps {
   isOpen: boolean;
   children: ReactNode;
@@ -46,7 +48,7 @@ const Drawer = ({ isOpen, children, position, onClose }: DrawerProps) => {
           left: position === DrawerPosition.Left ? 0 : "unset",
           right: position === DrawerPosition.Right ? 0 : "unset",
         }}
-        className="absolute bg-white"
+        className="drawer-content absolute bg-white overflow-auto"
       >
         <button
           type="button"

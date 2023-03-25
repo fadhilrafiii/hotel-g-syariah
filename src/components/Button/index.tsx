@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 
 import "./Button.scss";
 
@@ -12,7 +12,7 @@ enum ButtonTheme {
   Secondary = "secondary",
 }
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   theme?: ButtonTheme;
   startIcon?: ReactNode;
@@ -29,16 +29,19 @@ const Button = ({
   children,
   isCenter = false,
   className = "",
+  disabled = false,
   ...props
 }: ButtonProps) => {
   return (
     <button
+      type="button"
+      disabled={disabled}
       className={`${variant} ${theme} px-3 py-2 rounded-md flex items-center gap-x-[6px] font-semibold ${
         isCenter ? "justify-center" : "justify-between"
-      } ${className}`}
+      } ${className} ${disabled ? "opacity-40" : ""}`}
       {...props}
     >
-      <div className="flex items-center gap-x-[6px]">
+      <div className="flex items-center gap-x-[6px] !leading-none">
         {startIcon}
         {children}
       </div>

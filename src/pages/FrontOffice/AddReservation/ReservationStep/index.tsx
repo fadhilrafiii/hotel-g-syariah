@@ -17,7 +17,7 @@ const ReservationStep = ({ currentStep }: ReservationStepProps) => {
           <div className="flex gap-x-2 items-center">
             <span
               className={`w-5 h-5 inline-flex items-center justify-center rounded-full border ${
-                currentStep === step || (!currentStep && idx === 1)
+                currentStep === step || (!currentStep && idx === 0)
                   ? "border-green-600 bg-green-100 text-green-600"
                   : "border-gray-400 text-gray-400"
               } text-sm`}
