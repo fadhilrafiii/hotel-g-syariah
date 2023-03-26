@@ -16,7 +16,7 @@ const HKRoomTable = () => {
           Edit Massal
         </button>
       </div>
-      <table className="bg-white rounded-lg border-separate border border-gray-400 mx-auto my-4 w-full">
+      <table className="bg-white rounded-lg border-separate border border-gray-400 border-b-0 mx-auto my-4 w-full">
         <thead className="bg-gray-50 text-sm">
           <tr>
             <th className="px-3 py-2 text-left border-b border-gray-400">
