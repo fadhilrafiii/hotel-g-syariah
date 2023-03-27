@@ -37,7 +37,7 @@ const Button = ({
     <button
       type="button"
       disabled={disabled}
-      className={`${variant} ${theme} w-autog border px-3 py-2 rounded-md flex items-center gap-x-[6px] font-semibold ${
+      className={`${variant} ${theme} w-auto !leading-[1.1] border px-3 py-2 rounded-md flex items-center gap-x-[6px] font-semibold ${
         isCenter ? "justify-center" : "justify-between"
       } ${className} ${disabled ? "opacity-40" : ""}`}
       {...props}

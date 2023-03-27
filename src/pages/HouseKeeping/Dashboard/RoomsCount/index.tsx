@@ -8,12 +8,18 @@ const RoomsCount = () => {
         const statusClassname = getStatusClassname(data.rooms.status);
 
         return (
-          <div className="px-3 basis-1/3">
-            <div key={index} className="bg-blue-50 rounded-lg h-full">
+          <div key={index} className="px-3 basis-1/3">
+            <div className="bg-blue-50 rounded-lg h-full">
               <div className="flex">
                 <div className="px-3 py-2 w-1/3">
-                  <div className="text-xl font-semibold py-1">{data.rooms.name}</div>
-                  <div className={`text-xs font-semibold rounded-3xl w-12 text-center py-1 ${statusClassname}`}>{data.rooms.status}</div>
+                  <div className="text-xl font-semibold py-1">
+                    {data.rooms.name}
+                  </div>
+                  <div
+                    className={`text-xs font-semibold rounded-3xl w-12 text-center py-1 ${statusClassname}`}
+                  >
+                    {data.rooms.status}
+                  </div>
                 </div>
                 <img
                   className="w-2/3 h-[100px] object-cover rounded-bl-lg rounded-tr-lg"
