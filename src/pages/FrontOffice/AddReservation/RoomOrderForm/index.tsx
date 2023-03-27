@@ -79,13 +79,13 @@ const RoomOrderForm = ({ reservation, setReservation }: RoomOrderFormProps) => {
   const numOfRoomOrders = reservation.rooms.length;
 
   return (
-    <form>
+    <div>
       <div className="flex flex-col gap-y-6 -mx-6 pb-6">
         {reservation.rooms.map((roomOrder: RoomOrder, idx: number) => {
           return (
             <div className="bg-blue-50 p-6 flex flex-col gap-y-6" key={idx}>
-              <div className="flex justify-between items-center gap-x-6 border-b border-gray-300">
-                <h3 className="pb-6 font-semibold text-2xl !leading-normal">
+              <div className="flex justify-between items-center gap-x-6 border-b border-gray-300 pb-6">
+                <h3 className="font-semibold text-2xl !leading-normal">
                   Pilih Kamar {idx + 1}
                 </h3>
                 <Button
@@ -118,7 +118,7 @@ const RoomOrderForm = ({ reservation, setReservation }: RoomOrderFormProps) => {
       >
         {numOfRoomOrders > 0 ? "Tambah Kamar Lain" : "Tambah Kamar"}
       </Button>
-    </form>
+    </div>
   );
 };
 

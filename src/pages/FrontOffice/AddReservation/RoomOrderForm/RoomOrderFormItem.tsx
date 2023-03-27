@@ -29,6 +29,7 @@ const RoomOrderFormItem = ({
             value={roomOrder.type}
             options={ROOM_TYPE_OPTIONS}
             onChange={(value) => onSelect("type", value)}
+            required
           />
         </FieldContainer>
       </div>
@@ -38,6 +39,7 @@ const RoomOrderFormItem = ({
             value={roomOrder.id}
             options={ROOM_TYPE_OPTIONS}
             onChange={(value) => onSelect("id", value)}
+            required
           />
         </FieldContainer>
       </div>
@@ -47,6 +49,7 @@ const RoomOrderFormItem = ({
             value={roomOrder.withBreakfast}
             options={ROOM_BREAKFAST_OPTIONS}
             onChange={(value) => onSelect("withBreakfast", value)}
+            required
           />
         </FieldContainer>
       </div>
@@ -56,6 +59,7 @@ const RoomOrderFormItem = ({
             value={roomOrder.transactionType}
             options={TRANSACTION_TYPE_OPTIONS}
             onChange={(value) => onSelect("transactionType", value)}
+            required
           />
         </FieldContainer>
       </div>
@@ -71,6 +75,7 @@ const RoomOrderFormItem = ({
             placeholder="o.g. Traveloka..."
             onChange={(value) => onSelect("otaType", value)}
             disabled={roomOrder.transactionType !== "OTA"}
+            required={roomOrder.transactionType === "OTA"}
           />
         </FieldContainer>
       </div>
@@ -85,6 +90,7 @@ const RoomOrderFormItem = ({
             onChange={onInput}
             placeholder="o.g. 654874..."
             disabled={roomOrder.transactionType !== "OTA"}
+            required={roomOrder.transactionType === "OTA"}
           />
         </FieldContainer>
       </div>
