@@ -153,7 +153,7 @@ const RoomReservationPanel = ({
               variant={Button.Variant.Filled}
               theme={Button.Theme.Primary}
               isCenter
-              className="w-full"
+              className="!w-full"
               startIcon={<SearchOutlinedIcon size={16} color={Colors.White} />}
             >
               Cari Kamar

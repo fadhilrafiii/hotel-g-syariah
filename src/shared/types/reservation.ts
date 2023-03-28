@@ -1,4 +1,5 @@
 import { Dayjs } from "dayjs";
+import { Guest } from "./guest";
 import { RoomOrder } from "./room";
 
 export enum AddReservationSteps {
@@ -20,4 +21,5 @@ export interface Reservation {
   numOfAdult: number;
   numOfChildren: number;
   rooms: RoomOrder[];
+  guest: Guest;
 }
