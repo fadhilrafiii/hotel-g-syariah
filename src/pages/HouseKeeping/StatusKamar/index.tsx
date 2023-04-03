@@ -3,6 +3,7 @@ import StatusHouseKeeping from "../Dashboard/StatusHouseKeeping";
 import ModalStatusKamar from "./AddNewTaskModal";
 import HKRoomTable from "./HKRoomTable";
 import HKRoomType from "./HKRoomType";
+import Button from "src/components/Button";
 
 const HouseKeepingKamarPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -11,12 +12,9 @@ const HouseKeepingKamarPage = () => {
     <div className="flex flex-col gap-6 p-2">
       <div className="flex justify-between items-center">
         <StatusHouseKeeping />
-        <button
-          className="rounded-md font-semibold bg-blue-600 text-white px-3 py-[6px]"
-          onClick={() => setIsOpenModal(true)}
-        >
-          + Penugasan Baru
-        </button>
+        <Button onClick={() => setIsOpenModal(true)}>
+          <div>+ Penugasan Baru</div>
+        </Button>
       </div>
       <HKRoomType />
       <HKRoomTable />
