@@ -11,6 +11,7 @@ enum ButtonTheme {
   Primary = "primary",
   Secondary = "secondary",
   Danger = "danger",
+  White = "white",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

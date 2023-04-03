@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AddLinenModal from "./AddLinenModal";
 import LinenTable from "./LinenTable";
+import PlusOutlinedIcon from "src/components/icons/PlusOutlinedIcon";
 import Button from "src/components/Button";
 
 const HouseKeepingLinenPage = () => {
@@ -12,8 +13,11 @@ const HouseKeepingLinenPage = () => {
         <h3 className="font-semibold text-2xl">
           Linen <span className="text-base font-normal">{`(67)`}</span>
         </h3>
-        <Button onClick={() => setIsOpenModal(true)}>
-          <div>+ Tambah Linen Baru</div>
+        <Button
+          startIcon={<PlusOutlinedIcon size={20} />}
+          onClick={() => setIsOpenModal(true)}
+        >
+          Tambah Linen Baru
         </Button>
       </div>
       <div className="flex gap-2">

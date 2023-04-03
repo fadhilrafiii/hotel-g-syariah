@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HKLostFoundTable from "./LostFoundTable";
 import ModalLostFound from "./AddLostFoundModal";
+import PlusOutlinedIcon from "src/components/icons/PlusOutlinedIcon";
 import Button from "src/components/Button";
 
 const HouseKeepingLostFoundPage = () => {
@@ -12,8 +13,11 @@ const HouseKeepingLostFoundPage = () => {
         <h3 className="font-semibold text-2xl">
           Lost & Found <span className="text-base font-normal">{`(67)`}</span>
         </h3>
-        <Button onClick={() => setIsOpenModal(true)}>
-          <div>+ Tambah Barang Baru</div>
+        <Button
+          startIcon={<PlusOutlinedIcon size={20} />}
+          onClick={() => setIsOpenModal(true)}
+        >
+          Tambah Barang Baru
         </Button>
       </div>
       <div className="flex gap-2">
