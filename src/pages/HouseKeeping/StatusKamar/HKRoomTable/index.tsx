@@ -1,20 +1,36 @@
+import SelectAllIcon from "src/components/icons/SelectAllIcon";
+import ChevronDownIcon from "src/components/icons/ChevronDownIcon";
+import SearchOutlinedIcon from "src/components/icons/SearchOutlinedIcon";
+import Button from "src/components/Button";
 import { dummy } from "./constants";
+import CaretDownIcon from "src/components/icons/CaretDownIcon";
 
 const HKRoomTable = () => {
+  const tableHead = [
+    { header: "No Kamar" },
+    { header: "Tipe Kamar" },
+    { header: "HK Status" },
+    { header: "Staff HK" },
+    { header: "Note" },
+    { header: "Reservasi" },
+  ];
+
   return (
     <div className="bg-blue-50 px-3 pt-5 pb-12 rounded-lg h-full">
       <div className="flex gap-2 font-medium">
-        <input
-          type="text"
-          placeholder="Cari. . ."
-          className="px-3 py-2 rounded-lg outline-none border-2 text-sm"
-        />
-        <button className="rounded-lg bg-blue-600 text-sm border-2 border-blue-50 text-white py-1 px-3">
-          Cari
-        </button>
-        <button className="rounded-lg bg-white text-sm border-2 py-1 px-3">
+        <div className="flex items-center bg-white border border-gray-400 rounded-lg px-3 py-1 gap-2">
+          <SearchOutlinedIcon />
+          <input
+            type="text"
+            placeholder="Cari. . ."
+            className="outline-none text-sm"
+          />
+        </div>
+        <Button>Cari</Button>
+        <Button theme={Button.Theme.White} className="shadow-md">
+          <SelectAllIcon />
           Edit Massal
-        </button>
+        </Button>
       </div>
       <table className="bg-white rounded-lg border-separate border border-gray-400 border-b-0 mx-auto my-4 w-full">
         <thead className="bg-gray-50 text-sm">
@@ -22,24 +38,23 @@ const HKRoomTable = () => {
             <th className="px-3 py-2 text-left border-b border-gray-400">
               <input type="checkbox" />
             </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              No Kamar
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Tipe Kamar
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              HK Status
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Staff HK
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Note
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Reservasi
-            </th>
+            {tableHead.map((data, idx) => (
+              <th
+                key={idx}
+                className="font-semibold px-3 py-2 text-left border-b border-gray-400"
+              >
+                <div className="flex items-center gap-2">
+                  {data.header}
+                  {data.header !== "Note" ? (
+                    <ChevronDownIcon
+                      className="cursor-pointer"
+                      onClick={() => console.log("clicked")}
+                      size={7}
+                    />
+                  ) : null}
+                </div>
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -56,12 +71,16 @@ const HKRoomTable = () => {
                   {data.type}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-red-200 text-red-800 w-14 font-medium text-xs rounded-md px-2 py-1">
-                    {data.status} -
-                  </p>
+                  <div className="flex items-center justify-center gap-2 bg-red-200 text-red-800 font-medium text-xs text-center rounded-md w-16 py-1">
+                    {data.status}
+                    <CaretDownIcon color="#991B1B" />
+                  </div>
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.staff}
+                  <div className="flex items-center justify-center gap-2 bg-gray-200 text-gray-800 font-medium text-xs text-center rounded-md w-16 py-1">
+                    {data.staff}
+                    <CaretDownIcon color="#1F2937" />
+                  </div>
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
                   {data.note}

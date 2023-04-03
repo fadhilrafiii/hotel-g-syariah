@@ -17,7 +17,7 @@ const ModalStatusKamar = ({ isOpen, onClose }: StatusKamarModalProps) => {
     >
       <div className="flex gap-4 py-2">
         <div className="w-1/4">
-          <p className="font-semibold">Kamar</p>
+          <div className="font-semibold">Kamar</div>
           <select
             name=""
             id=""
@@ -28,7 +28,7 @@ const ModalStatusKamar = ({ isOpen, onClose }: StatusKamarModalProps) => {
           </select>
         </div>
         <div className="w-1/4">
-          <p className="font-semibold">Staff</p>
+          <div className="font-semibold">Staff</div>
           <select
             name=""
             id=""
@@ -39,7 +39,7 @@ const ModalStatusKamar = ({ isOpen, onClose }: StatusKamarModalProps) => {
           </select>
         </div>
         <div className="w-1/4">
-          <p className="font-semibold">Status</p>
+          <div className="font-semibold">Status</div>
           <select
             name=""
             id=""
@@ -52,7 +52,7 @@ const ModalStatusKamar = ({ isOpen, onClose }: StatusKamarModalProps) => {
           </select>
         </div>
         <div className="w-1/4">
-          <p className="font-semibold">Durasi Perbaikan</p>
+          <div className="font-semibold">Durasi Perbaikan</div>
           <select
             name=""
             id=""
@@ -63,7 +63,7 @@ const ModalStatusKamar = ({ isOpen, onClose }: StatusKamarModalProps) => {
         </div>
       </div>
       <div className="py-2">
-        <p className="font-semibold">Note</p>
+        <div className="font-semibold">Note</div>
         <input
           type="text"
           placeholder="Note"

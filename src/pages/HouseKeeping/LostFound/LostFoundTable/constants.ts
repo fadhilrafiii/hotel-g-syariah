@@ -5,7 +5,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "-",
   },
   {
@@ -14,7 +14,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "-",
   },
   {
@@ -23,7 +23,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -32,7 +32,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -41,7 +41,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -50,7 +50,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -59,7 +59,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -68,7 +68,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -77,7 +77,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
   {
@@ -86,7 +86,7 @@ export const dummy = [
     loc: "Auala An Naim",
     time: "05-05-23",
     by: "Agus",
-    status: "Found",
+    status: "Taken",
     owner: "Andi 0876538712934",
   },
 ];
