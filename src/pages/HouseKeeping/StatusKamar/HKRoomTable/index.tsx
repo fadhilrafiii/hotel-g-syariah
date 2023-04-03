@@ -1,20 +1,21 @@
 import SelectAllIcon from "src/components/icons/SelectAllIcon";
 import ChevronDownIcon from "src/components/icons/ChevronDownIcon";
 import SearchOutlinedIcon from "src/components/icons/SearchOutlinedIcon";
-import Button from "src/components/Button";
-import { dummy } from "./constants";
 import CaretDownIcon from "src/components/icons/CaretDownIcon";
+import Button from "src/components/Button";
+
+import { dummy } from "./constants";
+
+const MAP_TABLE_HEAD = [
+  { header: "No Kamar" },
+  { header: "Tipe Kamar" },
+  { header: "HK Status" },
+  { header: "Staff HK" },
+  { header: "Note" },
+  { header: "Reservasi" },
+];
 
 const HKRoomTable = () => {
-  const tableHead = [
-    { header: "No Kamar" },
-    { header: "Tipe Kamar" },
-    { header: "HK Status" },
-    { header: "Staff HK" },
-    { header: "Note" },
-    { header: "Reservasi" },
-  ];
-
   return (
     <div className="bg-blue-50 px-3 pt-5 pb-12 rounded-lg h-full">
       <div className="flex gap-2 font-medium">
@@ -38,7 +39,7 @@ const HKRoomTable = () => {
             <th className="px-3 py-2 text-left border-b border-gray-400">
               <input type="checkbox" />
             </th>
-            {tableHead.map((data, idx) => (
+            {MAP_TABLE_HEAD.map((data, idx) => (
               <th
                 key={idx}
                 className="font-semibold px-3 py-2 text-left border-b border-gray-400"
