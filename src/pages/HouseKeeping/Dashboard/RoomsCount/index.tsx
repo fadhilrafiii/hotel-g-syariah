@@ -28,7 +28,7 @@ const RoomsCount = () => {
                 />
               </div>
               <div className="text-sm px-3 py-4">Jadwal Kegiatan Terbaru</div>
-              <table className="bg-white border-separate rounded-lg border border-gray-400 w-[95%] mx-auto mb-2">
+              <table className="bg-white border-separate rounded-lg border border-gray-400 border-b-0 w-[95%] mx-auto mb-2">
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="border-b border-gray-400 text-sm py-3 px-2 text-left">
@@ -41,7 +41,7 @@ const RoomsCount = () => {
                 </thead>
                 <tbody>
                   {data.act.map((data: any, index: number) => (
-                    <tr key={index} className="border-b border-gray-400">
+                    <tr key={index}>
                       <td className="border-b border-gray-400 text-sm py-3 px-2 text-left">
                         {data.time}
                       </td>

@@ -1,10 +1,12 @@
-$primary-button-color: #2563EB;
-$primary-text-color: #2563EB;
-$secondary-button-color: #F3F4F6;
+$primary-button-color: #2563eb;
+$primary-text-color: #2563eb;
+$secondary-button-color: #f3f4f6;
 $secondary-outlined-button-color: #9ca3af;
-$secondary-text-color: #4B5563;
+$secondary-text-color: #4b5563;
 $danger-button-color: #ffe4e6;
 $danger-text-color: #be123c;
+$white-button-color: #ffffff;
+$white-text-color: #4b5563;
 
 .primary.outlined {
   border-color: $primary-button-color;
@@ -33,7 +35,6 @@ $danger-text-color: #be123c;
     fill: white;
   }
 }
-
 
 .secondary.outlined {
   border-color: $secondary-outlined-button-color;
@@ -83,10 +84,38 @@ $danger-text-color: #be123c;
   color: $danger-text-color;
 
   & * {
-    color: $danger-text-color;;
+    color: $danger-text-color;
   }
 
   path {
-    fill: $danger-text-color;;
+    fill: $danger-text-color;
+  }
+}
+
+.white.outlined {
+  border-color: $white-text-color;
+  background-color: white;
+  color: $white-text-color;
+
+  & * {
+    color: $white-text-color;
+  }
+
+  path {
+    fill: $white-text-color;
+  }
+}
+
+.white.filled {
+  border-color: $white-button-color;
+  background-color: $white-button-color;
+  color: $white-text-color;
+
+  & * {
+    color: $white-text-color;
+  }
+
+  path {
+    fill: $white-text-color;
   }
 }

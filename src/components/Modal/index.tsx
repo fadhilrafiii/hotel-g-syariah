@@ -37,6 +37,7 @@ const Modal = ({
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         ...overlayStyle,
+        zIndex: 100,
       }}
       className="fixed inset-0"
     >

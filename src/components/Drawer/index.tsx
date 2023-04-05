@@ -52,7 +52,7 @@ const Drawer = ({ isOpen, children, position, onClose }: DrawerProps) => {
       >
         <button
           type="button"
-          className="absolute top-5 right-7 text-red-600 text-5xl inline z-20"
+          className="absolute top-5 right-7 text-red-600 text-5xl inline z-10"
           onClick={onClose}
         >
           <CloseOutlinedIcon size={20} />

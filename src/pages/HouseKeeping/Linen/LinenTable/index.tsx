@@ -1,48 +1,67 @@
+import SelectAllIcon from "src/components/icons/SelectAllIcon";
+import ChevronDownIcon from "src/components/icons/ChevronDownIcon";
+import SearchOutlinedIcon from "src/components/icons/SearchOutlinedIcon";
+import CaretDownIcon from "src/components/icons/CaretDownIcon";
+import Button from "src/components/Button";
+
 import { dummy } from "./constants";
+
+const MAP_TABLE_HEAD = [
+  { header: "ID Number" },
+  { header: "Vendor" },
+  { header: "Jumlah Linen" },
+  { header: "Tanggal Masuk" },
+  { header: "Tanggal Jadi" },
+  { header: "Harga" },
+  { header: "Status" },
+];
 
 const LinenTable = () => {
   return (
     <div className="bg-blue-50 px-3 pt-5 pb-12 rounded-lg h-full">
       <div className="flex gap-2 font-medium">
-        <input
-          type="text"
-          placeholder="Cari. . ."
-          className="px-3 py-2 rounded-lg outline-none border-2 text-sm"
-        />
-        <button className="rounded-lg bg-blue-600 text-sm border-2 border-blue-50 text-white py-1 px-3">
-          Cari
-        </button>
-        <button className="rounded-lg bg-white text-sm border-2 py-1 px-3">
+        <div className="flex items-center bg-white border border-gray-400 rounded-lg px-3 py-1 gap-2">
+          <SearchOutlinedIcon />
+          <input
+            type="text"
+            placeholder="Cari. . ."
+            className="outline-none text-sm"
+          />
+        </div>
+        <Button>Cari</Button>
+        <Button theme={Button.Theme.White} className="shadow-md">
+          <SelectAllIcon />
           Edit Massal
-        </button>
+        </Button>
       </div>
-      <table className="bg-white rounded-lg border-separate border border-gray-400 mx-auto my-4 w-full">
+      <table className="bg-white rounded-lg border-separate border border-gray-400 border-b-0 mx-auto my-4 w-full">
         <thead className="bg-gray-50 text-sm">
           <tr>
             <th className="px-3 py-2 text-left border-b border-gray-400">
               <input type="checkbox" />
             </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              ID Number
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Vendor
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Jumlah Linen
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Tanggal Masuk
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Tanggal Jadi
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Harga
-            </th>
-            <th className="font-semibold px-3 py-2 text-left border-b border-gray-400">
-              Status
-            </th>
+            {MAP_TABLE_HEAD.map((data, idx) => {
+              const isUseArrowIcon =
+                data.header !== "ID Number" && data.header !== "Harga";
+
+              return (
+                <th
+                  key={idx}
+                  className="font-semibold px-3 py-2 text-left border-b border-gray-400"
+                >
+                  <div className="flex items-center gap-2">
+                    {data.header}
+                    {isUseArrowIcon ? (
+                      <ChevronDownIcon
+                        className="cursor-pointer"
+                        onClick={() => console.log("clicked")}
+                        size={7}
+                      />
+                    ) : null}
+                  </div>
+                </th>
+              );
+            })}
           </tr>
         </thead>
         <tbody>
@@ -53,26 +72,28 @@ const LinenTable = () => {
                   <input type="checkbox" />
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.room}
+                  #{data.id_number}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.type}
+                  {data.vendor}
+                </td>
+                <td className="px-3 py-2 text-center border-b border-gray-400">
+                  {data.jumlah}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-red-200 text-red-800 w-14 font-medium text-xs rounded-md px-2 py-1">
-                    {data.status} -
-                  </p>
+                  {data.tgl_masuk}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.staff}
+                  {data.tgl_jadi}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  {data.note}
+                  Rp. {data.harga}
                 </td>
                 <td className="px-3 py-2 text-left border-b border-gray-400">
-                  <p className="bg-gray-200 text-gray-800 w-24 font-medium text-xs text-center rounded-xl px-2 py-1">
-                    {data.reserv}
-                  </p>
+                  <div className="flex items-center justify-center gap-2 bg-blue-200 text-blue-800 font-medium text-xs text-center rounded-md w-20 py-1">
+                    {data.status}
+                    <CaretDownIcon />
+                  </div>
                 </td>
               </tr>
             );
