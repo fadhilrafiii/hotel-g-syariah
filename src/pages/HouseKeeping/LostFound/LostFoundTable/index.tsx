@@ -41,17 +41,10 @@ const HKLostFoundTable = () => {
               <input type="checkbox" />
             </th>
             {MAP_TABLE_HEAD.map((data, idx) => {
-              const isUseArrowIcon = () => {
-                if (
-                  data.header !== "Deskripsi" &&
-                  data.header !== "Lokasi Penemuan" &&
-                  data.header !== "Pemilik & No Telp"
-                ) {
-                  return true;
-                } else {
-                  return false;
-                }
-              };
+              const isUseArrowIcon =
+                data.header !== "Deskripsi" &&
+                data.header !== "Lokasi Penemuan" &&
+                data.header !== "Pemilik & No Telp";
 
               return (
                 <th
@@ -60,7 +53,7 @@ const HKLostFoundTable = () => {
                 >
                   <div className="flex items-center gap-2">
                     {data.header}
-                    {isUseArrowIcon() ? (
+                    {isUseArrowIcon ? (
                       <ChevronDownIcon
                         className="cursor-pointer"
                         onClick={() => console.log("clicked")}

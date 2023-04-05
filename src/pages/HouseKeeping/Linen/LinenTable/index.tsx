@@ -41,13 +41,8 @@ const LinenTable = () => {
               <input type="checkbox" />
             </th>
             {MAP_TABLE_HEAD.map((data, idx) => {
-              const isUseArrowIcon = () => {
-                if (data.header !== "ID Number" && data.header !== "Harga") {
-                  return true;
-                } else {
-                  return false;
-                }
-              };
+              const isUseArrowIcon =
+                data.header !== "ID Number" && data.header !== "Harga";
 
               return (
                 <th
@@ -56,7 +51,7 @@ const LinenTable = () => {
                 >
                   <div className="flex items-center gap-2">
                     {data.header}
-                    {isUseArrowIcon() ? (
+                    {isUseArrowIcon ? (
                       <ChevronDownIcon
                         className="cursor-pointer"
                         onClick={() => console.log("clicked")}
