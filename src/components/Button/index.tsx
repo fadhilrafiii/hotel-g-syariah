@@ -43,7 +43,7 @@ const Button = ({
       } ${className} ${disabled ? "opacity-40" : ""}`}
       {...props}
     >
-      <div className="flex items-center gap-x-[6px] !leading-none">
+      <div className="flex items-center gap-x-[6px] !leading-[1.1]">
         {startIcon}
         {children}
       </div>
